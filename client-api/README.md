@@ -99,7 +99,7 @@ client-api/
 | Method | Endpoint | Description |
 |--------|----------|-------------|
 | `GET` | `/api/v1/health` | Liveness check |
-| `POST` | `/api/v1/chat` | Send a message; returns LLM order suggestion |
+| `POST` | `/api/v1/chat` | Send a message |
 | `POST` | `/api/v1/orders/create_order` | Create or extend an order |
 | `PUT` | `/api/v1/orders/validate_order/{order_id}` | Validate an order |
 | `GET` | `/api/v1/orders/{order_id}` | Get order details |

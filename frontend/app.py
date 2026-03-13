@@ -84,7 +84,7 @@ def format_order_for_display(order_suggestion: OrderSuggestion):
 def build_app():
     with gr.Blocks() as demo:
         
-        # Internal state for UserContext and UserSuggestion
+        # Internal state for UserContext and OrderSuggestion
         user_context_state = gr.State(UserContext(**{
             "user_id": str(uuid.uuid4()),
             "user_history": [],
