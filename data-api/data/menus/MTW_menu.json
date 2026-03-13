@@ -1,0 +1,93 @@
+[
+    {
+        "id": 1, 
+        "category": "plat", 
+        "dish_name": "Wok saté", 
+        "description": "Plat sauce saté à base de viande/fruits de mer(au choix) sauté au wok avec riz ou nouilles(au choix)",
+        "price": 13,
+        "spiciness": ["non épicé","léger","moyen","fort","indéfini"],
+        "dish_base": ["riz","nouilles larges","nouilles fines","indéfini"],
+        "dish_meat": ["boeuf","porc","poulet","crevette","seiche","indéfini"]
+
+    },
+    {
+        "id": 2, 
+        "category": "plat", 
+        "dish_name": "Wok thaï", 
+        "description": "Plat sauce thaï à base de viande/fruits de mer(au choix) sauté au wok avec riz ou nouilles(au choix)",
+        "price": 13,
+        "spiciness": ["non épicé","léger","moyen","fort","indéfini"],
+        "dish_base": ["riz","nouilles larges","nouilles fines","indéfini"],
+        "dish_meat": ["boeuf","porc","poulet","crevette","seiche","indéfini"]
+    },
+    {
+        "id": 3, 
+        "category": "plat", 
+        "dish_name": "Wok épicé", 
+        "description": "Plat sauce épicé à base de viande/fruits de mer(au choix) sauté au wok avec riz ou nouilles(au choix)",
+        "price": 13,
+        "spiciness": ["moyen","fort"],
+        "dish_base": ["riz","nouilles larges","nouilles fines","indéfini"],
+        "dish_meat": ["boeuf","porc","poulet","crevette","seiche","indéfini"]
+    },
+    {
+        "id": 4, 
+        "category": "plat", 
+        "dish_name": "Wok curry", 
+        "description": "Plat sauce curry à base de viande/fruits de mer(au choix) sauté au wok avec riz ou nouilles(au choix)",
+        "price": 13,
+        "spiciness": ["non épicé","léger","moyen","fort","indéfini"],
+        "dish_base": ["riz","nouilles larges","nouilles fines","indéfini"],
+        "dish_meat": ["boeuf","porc","poulet","crevette","seiche","indéfini"]
+    },
+    {
+        "id": 5, 
+        "category": "plat", 
+        "dish_name": "Wok Luc Lac", 
+        "description": "Plat sauce Luc Lac à base de boeuf coupé en cubes sauté au wok avec riz ou nouilles(au choix)",
+        "price": 12,
+        "spiciness": ["non épicé"],
+        "dish_base": ["riz","nouilles larges","nouilles fines","indéfini"],
+        "dish_meat": ["boeuf"]
+    },
+    {
+        "id": 101, 
+        "category": "entrée", 
+        "dish_name": "Nems porc", 
+        "description": "Nems maison au porc, portion de 4 pièces",
+        "price": 5,
+        "spiciness": ["None"],
+        "dish_base": ["None"],
+        "dish_meat": ["None"]
+    },
+    {
+        "id": 102, 
+        "category": "entrée", 
+        "dish_name": "Nems poulet", 
+        "description": "Nems maison au poulet, portion de 4 pièces",
+        "price": 5,
+        "spiciness": ["None"],
+        "dish_base": ["None"],
+        "dish_meat": ["None"]
+    },
+    {
+        "id": 103, 
+        "category": "entrée", 
+        "dish_name": "Brochettes de boeuf", 
+        "description": "Brochettes de boeuf maison, portion de 2 pièces",
+        "price": 6,
+        "spiciness": ["None"],
+        "dish_base": ["None"],
+        "dish_meat": ["None"]
+    },
+    {
+        "id": 104, 
+        "category": "entrée", 
+        "dish_name": "Baozi", 
+        "description": "Petites brioches vapeur maison au porc, portion de 4 pièces",
+        "price": 8,
+        "spiciness": ["None"],
+        "dish_base": ["None"],
+        "dish_meat": ["None"]
+    }
+]
