@@ -61,7 +61,7 @@ LLM models used must be specified in settings. Settings can be reviewed and twea
 ### Running the service
 
 ```bash
-uvicorn src.llm_service.main:app --reload
+uvicorn src.llm_service.main:app --reload --port 8001
 ```
 
 The API will be available at `http://localhost:8001/api/v1` (the `PORT` setting is honoured).
