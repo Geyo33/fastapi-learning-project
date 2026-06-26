@@ -423,7 +423,7 @@ J'ai effectué les modifications pour votre commande, cela vous convient-il ?"""
                         self.logger.debug("Dynamic model: %s ", function_response["template"])
                         if max(function_response["indices"]) >= len(self.current_order.items):
                             self.logger.error("LLM returned invalid order_item_index for update: %s", max(function_response["indices"]))
-                            raise OrderBuildingException(f"LLM returned invalid order_item_index for update: {max(function_response["indices"])}")
+                            raise OrderBuildingException(f"LLM returned invalid order_item_index for update: {max(function_response['indices'])}")
                         if function_response["has_diy"]:
                             order_draft_suggestion = await self.chat_update_order(payload, function_response, max_tokens)
                             try:

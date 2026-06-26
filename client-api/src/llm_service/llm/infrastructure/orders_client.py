@@ -63,7 +63,7 @@ class OrdersClient:
         resp = await self._client.post(url, json=data)
         resp.raise_for_status()
         order_data = resp.json()
-        logger.info(f"Appended to order {order_data["customer_info"]['user_id']}")
+        logger.info(f"Appended to order {order_data['customer_info']['user_id']}")
         return f"Appended to order : {user_context.user_id}"
     
     @retry(stop=stop_after_attempt(3), wait=wait_exponential(multiplier=1, min=1, max=10), retry=retry_if_exception_type(httpx.RequestError))
@@ -87,7 +87,7 @@ class OrdersClient:
         resp = await self._client.put(url, json=updates)
         resp.raise_for_status()
         order_data = resp.json()
-        logger.info(f"Updated order {order_data["customer_info"]['user_id']}")
+        logger.info(f"Updated order {order_data['customer_info']['user_id']}")
         return f"Updated order : {user_context.user_id}"
     
     @retry(stop=stop_after_attempt(3), wait=wait_exponential(multiplier=1, min=1, max=10), retry=retry_if_exception_type(httpx.RequestError))
@@ -103,7 +103,7 @@ class OrdersClient:
         resp = await self._client.put(url, json=remove_update)
         resp.raise_for_status()
         order_data = resp.json()
-        logger.info(f"Updated order {order_data["customer_info"]['user_id']}")
+        logger.info(f"Updated order {order_data['customer_info']['user_id']}")
         return f"Updated order : {user_context.user_id}"
     
     @retry(stop=stop_after_attempt(3), wait=wait_exponential(multiplier=1, min=1, max=10), retry=retry_if_exception_type(httpx.RequestError))
@@ -143,7 +143,7 @@ class OrdersClient:
         if order_data["customer_order"]["raw_text"] == "incomplete_order":
             return False
         else:
-            logger.info(f"Validated order {order_data["customer_info"]['user_id']}")
+            logger.info(f"Validated order {order_data['customer_info']['user_id']}")
             return True
     
     @retry(stop=stop_after_attempt(2), wait=wait_exponential(multiplier=1, min=1, max=5), retry=retry_if_exception_type(httpx.RequestError))

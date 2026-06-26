@@ -105,6 +105,46 @@ Open your browser at the URL printed by Gradio (typically `http://localhost:7860
 
 ---
 
+## 🐳 Running with Docker
+
+All three services are containerised and orchestrated with Docker Compose.
+
+### Prerequisites
+- Docker + Docker Compose v2
+
+### Configuration
+
+`client-api` still needs its `.env` file. Copy the example and fill in your LLM credentials:
+
+```bash
+cp client-api/.env.example client-api/.env
+```
+
+> The inter-service URLs (`ORDERS_API_BASE_URL`, `RESTAURANTS_API_BASE_URL`, `CLIENT_API_URL`) are overridden in `docker-compose.yml` to use Docker service names, so any `localhost` values in `.env` are ignored when running in Docker.
+
+### Build & run
+
+```bash
+docker compose up --build
+```
+
+| Service | URL |
+|---------|-----|
+| Frontend (Gradio) | http://localhost:7860 |
+| Client API | http://localhost:8001/api/v1 |
+| Data API | http://localhost:8002/api/v1 |
+
+Startup order is handled automatically: `data-api` exposes a `/health` check, `client-api` waits for it to be healthy, and `frontend` waits for `client-api`. The SQLite database persists in the `sqlite-data` named volume.
+
+Stop with `Ctrl+C`, or tear down with:
+
+```bash
+docker compose down          # keep the database volume
+docker compose down -v       # also delete the database volume
+```
+
+---
+
 ## 🔌 Service Map
 
 ```
@@ -129,6 +169,15 @@ pytest -q
 ```bash
 cd data-api
 pytest -q
+```
+
+### In Docker
+
+Both suites are self-contained (temp SQLite, mocked LLM client — no running services needed) and can run in throwaway containers via the `test` profile:
+
+```bash
+docker compose --profile test run --rm data-api-test
+docker compose --profile test run --rm client-api-test
 ```
 
 ---

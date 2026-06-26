@@ -1,11 +1,12 @@
 import gradio as gr
 import requests
 import uuid
+import os
 import pandas as pd
 from schemas import OrderSuggestion, OrderRequest, UserContext, CustomerOrder, ChatRequest
 
 # --- API Configuration ---
-BASE_URL = "http://localhost:8001/api/v1"
+BASE_URL = os.getenv("CLIENT_API_URL", "http://localhost:8001/api/v1")
 RESTAURANT_ID = "MTW"
 
 def get_restaurant_menu():
@@ -297,6 +298,7 @@ if __name__ == "__main__":
     menu_snapshot = get_restaurant_menu()
     app = build_app()
     app.launch(
-        theme=gr.themes.Soft(primary_hue="orange"), 
-        debug=True
+        theme=gr.themes.Soft(primary_hue="orange"),
+        debug=True,
+        server_name="0.0.0.0"
     )

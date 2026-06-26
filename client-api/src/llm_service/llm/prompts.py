@@ -280,7 +280,7 @@ Current order :
 
 -----
                        
-Dish(es) user seemingly wishes to add to the order : {[f"{e["dish_name"]}(id: {e["item_id"]}) x{e["qty"]}" for e in items_list]}.
+Dish(es) user seemingly wishes to add to the order : {[f"{e['dish_name']}(id: {e['item_id']}) x{e['qty']}" for e in items_list]}.
 - Only generate the items to add in the list just above.
 - Each wok has to be added individually so the 'qty' field should always be 1."""})
 
@@ -326,7 +326,7 @@ Current order :
 
 -----
 
-Dish(es) user seemingly wishes to update from the order : {[f"{e["dish_name"]}(id: {e["item_id"]}) x{e["qty"]}" for e in items_list]}.
+Dish(es) user seemingly wishes to update from the order : {[f"{e['dish_name']}(id: {e['item_id']}) x{e['qty']}" for e in items_list]}.
 - Only generate the items requiring an update mentioned in the list just above."""})
         
         return prompt

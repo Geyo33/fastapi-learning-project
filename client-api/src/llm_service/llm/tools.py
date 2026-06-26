@@ -77,7 +77,7 @@ async def update_items_tool(menu: list[dict], items: list[dict]) -> dict[str, An
     for item in items_to_update:
         menu_item = menu_snapshot.items.get(item["item_id"])
         if not menu_item:
-            raise ValueError(f"Item not found in menu: {item["item_id"]}")
+            raise ValueError(f"Item not found in menu: {item['item_id']}")
         if menu_item.id == item["item_id"]:
             indices.append(item["order_item_index"])
             formatted_item = {
