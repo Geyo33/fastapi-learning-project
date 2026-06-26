@@ -40,6 +40,8 @@ services:
   client-api-test:
     build: ./client-api
     command: pytest
+    environment:                                                                                                                    
+      OPENAI_API_KEY: test-key  
     profiles: ["test"]
 
 volumes:
